@@ -3,7 +3,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 年別
+   :caption: 目次
 
    はじめまして/index
    2026/index

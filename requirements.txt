@@ -3,3 +3,4 @@ sphinx-rtd-theme
 sphinxcontrib-drawio
 sphinxcontrib-mermaid
 sphinx-nekochan
+sphinx-copybutton

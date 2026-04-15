@@ -4,17 +4,19 @@
 テーマ
 ------
 
-特別回 🐍 講師招待ハンズオン（計画中）
+特別回 :nekochan:`hebi-nya` Python Boot Camp in 広島 3rd 開催決定
 
 内容
 ----
 
-詳細は後日発表予定
+詳細はconnpassのイベントページをご覧ください。
+https://pyconjp.connpass.com/event/389571/
+
 
 備考
 ----
 
-この回は現地のみとなります 🙏
+広島現地開催のみ・オンラインはありません 🙏
 
 Python Boot Camp in 広島 3rd
 -----------------------------
