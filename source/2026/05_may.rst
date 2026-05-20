@@ -50,13 +50,26 @@
 
 いきなり全部を作るのではなく、最初は簡単な計算だけ試してみましょう。
 
-.. code-block:: python
+:download:`05_01_basic_calculation.py をダウンロード <../examples/05_01_basic_calculation.py>`
 
-   price = 1200
-   quantity = 2
-   subtotal = price * quantity
+.. literalinclude:: ../examples/05_01_basic_calculation.py
+   :language: python
+   :caption: source/examples/05_01_basic_calculation.py
+   :linenos:
 
-   print(subtotal)
+ダウンロードしたファイルは、次のように実行できます。
+
+*Windows (PowerShell)*
+
+.. code-block:: powershell
+
+   python "$env:USERPROFILE\Downloads\05_01_basic_calculation.py"
+
+*Mac / Linux*
+
+.. code-block:: bash
+
+   python3 ~/Downloads/05_01_basic_calculation.py
 
 このプログラムでは、
 ``price`` に値段、``quantity`` に個数を入れて、
@@ -73,15 +86,26 @@
 
 次に、お店の人が入力できるようにしてみます。
 
-.. code-block:: python
+:download:`05_02_input_subtotal.py をダウンロード <../examples/05_02_input_subtotal.py>`
 
-   item_name = input("商品名を入力してください: ")
-   price = int(input("1つの値段を入力してください: "))
-   quantity = int(input("個数を入力してください: "))
+.. literalinclude:: ../examples/05_02_input_subtotal.py
+   :language: python
+   :caption: source/examples/05_02_input_subtotal.py
+   :linenos:
 
-   subtotal = price * quantity
+ダウンロードしたファイルは、次のように実行できます。
 
-   print(f"{item_name} の小計は {subtotal} 円です")
+*Windows (PowerShell)*
+
+.. code-block:: powershell
+
+   python "$env:USERPROFILE\Downloads\05_02_input_subtotal.py"
+
+*Mac / Linux*
+
+.. code-block:: bash
+
+   python3 ~/Downloads/05_02_input_subtotal.py
 
 ``input()`` は、キーボードから入力された内容を受け取る関数です。
 
@@ -99,20 +123,28 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 会員なら 10% 引き、そうでなければ値引きなしにしてみましょう。
+ここでは、前の計算で小計が ``2400`` 円になったとして試します。
 
-.. code-block:: python
+:download:`05_03_member_discount.py をダウンロード <../examples/05_03_member_discount.py>`
 
-   member_answer = input("会員ですか？ (y/n): ").strip().lower()
+.. literalinclude:: ../examples/05_03_member_discount.py
+   :language: python
+   :caption: source/examples/05_03_member_discount.py
+   :linenos:
 
-   if member_answer == "y":
-       discount = int(subtotal * 0.1)
-   else:
-       discount = 0
+ダウンロードしたファイルは、次のように実行できます。
 
-   total = subtotal - discount
+*Windows (PowerShell)*
 
-   print(f"値引き額は {discount} 円です")
-   print(f"お会計は {total} 円です")
+.. code-block:: powershell
+
+   python "$env:USERPROFILE\Downloads\05_03_member_discount.py"
+
+*Mac / Linux*
+
+.. code-block:: bash
+
+   python3 ~/Downloads/05_03_member_discount.py
 
 ``if`` は、条件によって処理を分けるための書き方です。
 
@@ -134,29 +166,35 @@
 
 処理が長くなってきたら、関数に分けると読みやすくなります。
 
-.. code-block:: python
+:download:`05_04_calculate_total_function.py をダウンロード <../examples/05_04_calculate_total_function.py>`
 
-   def calculate_total(price, quantity, is_member):
-       subtotal = price * quantity
+.. literalinclude:: ../examples/05_04_calculate_total_function.py
+   :language: python
+   :caption: source/examples/05_04_calculate_total_function.py
+   :linenos:
 
-       if is_member:
-           member_discount = int(subtotal * 0.1)
-       else:
-           member_discount = 0
+ダウンロードしたファイルは、次のように実行できます。
 
-       if quantity >= 3:
-           bulk_discount = 100
-       else:
-           bulk_discount = 0
+*Windows (PowerShell)*
 
-       total = subtotal - member_discount - bulk_discount
-       return subtotal, member_discount, bulk_discount, total
+.. code-block:: powershell
+
+   python "$env:USERPROFILE\Downloads\05_04_calculate_total_function.py"
+
+*Mac / Linux*
+
+.. code-block:: bash
+
+   python3 ~/Downloads/05_04_calculate_total_function.py
 
 ``def`` は、関数を定義するときに使います。
 
 この ``calculate_total()`` 関数は、
 値段・個数・会員かどうかを受け取って、
 小計、会員割引、まとめ買い割引、合計金額をまとめて返します。
+
+最後の ``print(calculate_total(1200, 3, True))`` では、
+返ってきた4つの値がまとめて表示されます。
 
 関数にしておくと、あとで同じ計算をもう一度使いたいときにも便利です。
 
@@ -190,26 +228,33 @@
 として保存してみましょう。
 
 
-7. 完成版を見てみよう
-~~~~~~~~~~~~~~~~~~~~~
+7. 完成版をダウンロードしよう
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 この教材リポジトリでは、見本コードを
-``source/examples/ohanashi_register.py`` に置いています。
+``source/examples/05_05_ohanashi_register.py`` に置いています。
 
-自分で作るときは、作業用フォルダの
-``2026/05_ohanashi_register/`` に
-``ohanashi_register.py`` という名前で保存してみましょう。
+まずは完成版をダウンロードして、動きを見てみましょう。
 
-.. literalinclude:: ../examples/ohanashi_register.py
+:download:`05_05_ohanashi_register.py をダウンロード <../examples/05_05_ohanashi_register.py>`
+
+ダウンロードしたファイルは、作業用フォルダの
+``2026/05_ohanashi_register/`` に入れて使います。
+ファイル名は ``ohanashi_register.py`` に変更しても、そのまま使えます。
+
+コードの中身を確認したいときは、次の見本を読んでみてください。
+
+.. literalinclude:: ../examples/05_05_ohanashi_register.py
    :language: python
-   :caption: source/examples/ohanashi_register.py
+   :caption: source/examples/05_05_ohanashi_register.py
    :linenos:
 
 
 8. 実行してみよう
 ~~~~~~~~~~~~~~~~~
 
-まずは、5月用の作業フォルダへ移動します。
+まずは、``python-study`` の中に 5月用の作業フォルダを作ります。
+そのあと、ダウンロードした ``05_05_ohanashi_register.py`` をそのフォルダへコピーします。
 
 *Windows (PowerShell)*
 
@@ -217,7 +262,7 @@
 
    Set-Location python-study
    New-Item -ItemType Directory 2026\05_ohanashi_register -Force
-   Set-Location 2026\05_ohanashi_register
+   Copy-Item "$env:USERPROFILE\Downloads\05_05_ohanashi_register.py" 2026\05_ohanashi_register\ohanashi_register.py
 
 *Mac / Linux*
 
@@ -225,21 +270,21 @@
 
    cd python-study
    mkdir -p 2026/05_ohanashi_register
-   cd 2026/05_ohanashi_register
+   cp ~/Downloads/05_05_ohanashi_register.py 2026/05_ohanashi_register/ohanashi_register.py
 
-その場所に ``ohanashi_register.py`` を保存したら、次のように実行します。
+ファイルをコピーできたら、次のように実行します。
 
 *Windows (PowerShell / コマンドプロンプト)*
 
 .. code-block:: powershell
 
-   python ohanashi_register.py
+   python 2026\05_ohanashi_register\ohanashi_register.py
 
 *Mac / Linux*
 
 .. code-block:: bash
 
-   python3 ohanashi_register.py
+   python3 2026/05_ohanashi_register/ohanashi_register.py
 
 この教材リポジトリに入っている見本コードを試す場合は、
 リポジトリのルートで次のように実行できます。
@@ -248,13 +293,13 @@
 
 .. code-block:: powershell
 
-   python source\examples\ohanashi_register.py
+   python source\examples\05_05_ohanashi_register.py
 
 *Mac / Linux*
 
 .. code-block:: bash
 
-   python3 source/examples/ohanashi_register.py
+   python3 source/examples/05_05_ohanashi_register.py
 
 たとえば、次のように動きます。
 
@@ -277,16 +322,11 @@
    合計: 3140円
    またおはなしの世界へどうぞ！
 
-9. GUI版も試してみよう
-~~~~~~~~~~~~~~~~~~~~~~
+9. 発展：GUI版も試してみよう
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-CLI版が動いたら、同じアプリを **ウィンドウで動かす GUI 版** も試してみましょう。
- 
-ターミナルの代わりに、画面上の入力欄に文字を入力して Enter を押すと、
-同じ会話の流れでお会計が表示されます。
- 
-.. image:: https://github.com/MikiMakino/100days-of-code/raw/main/day95-ohanashi-register-gui/README.md
-   :alt: おはなしレジアプリ GUI版のスクリーンショット
+CLI版が動いたら、発展として **ウィンドウで動かす GUI 版** も試せます。
+今回はCLI版が本題なので、余裕がある人向けです。
  
 GUI版のコードとセットアップ手順は、次の GitHub リポジトリに置いています。
  
@@ -294,16 +334,8 @@ GUI版のコードとセットアップ手順は、次の GitHub リポジトリ
  
 ``ohanashi_register_gui.py``・``README.md``・``requirements.txt`` の
 3ファイルをそのままコピーして使ってかまいません。
- 
-コードをコピーして使った場合は、ぜひリポジトリの ☆ Star を押してもらえると嬉しいです。
- 
-CLI版との主な違いは次のとおりです。
- 
-- ``print()`` の代わりに、ScrolledText（スクロールできるテキストエリア）に追記する
-- ``input()`` の代わりに、Entry ウィジェット（入力欄）と Enter キーで回答する
-- 「今どの質問か」を ``step`` という変数で管理することで、会話の流れを再現している
- 
-計算ロジック（``calculate_total()``）は CLI 版と同じコードを使っています。
+
+計算ロジック（``calculate_total()``）は、CLI 版と同じ考え方で使えます。
 
 
 10. エラーメッセージの見方
@@ -318,8 +350,10 @@ CLI版との主な違いは次のとおりです。
 
    1つの値段を入力してください: りんご
    Traceback (most recent call last):
-     File "ohanashi_register.py", line 6, in <module>
-       price = int(input("1つの値段を入力してください: "))
+     File "ohanashi_register.py", line 53, in <module>
+       main()
+     File "ohanashi_register.py", line 30, in main
+       price = int(input("1つの値段（円）を入力してください: "))
    ValueError: invalid literal for int() with base 10: 'りんご'
 
 このときは、次の順番で見ると分かりやすくなります。
@@ -328,8 +362,8 @@ CLI版との主な違いは次のとおりです。
   ``ValueError`` は「値の変換で困った」という意味です。
 - その少し上の行  
   ``price = int(input(...))`` のところで起きたと分かります。
-- ``line 6``  
-  6行目を見直せばよいと分かります。
+- ``line 30``  
+  30行目を見直せばよいと分かります。
 
 今回のレジアプリでよくあるのは、次のようなケースです。
 
