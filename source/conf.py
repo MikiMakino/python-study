@@ -6,7 +6,6 @@ author = 'Makino'
 release = '1.0'
 
 extensions = [
-    'sphinxcontrib.mermaid',
     'sphinx_nekochan',
     'sphinx_copybutton',
 ]

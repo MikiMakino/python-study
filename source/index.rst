@@ -6,8 +6,8 @@
    :caption: 目次
 
    はじめまして/index
+   python_kihon/index
    2026/index
-   2027/index
 
 .. toctree::
    :maxdepth: 1
