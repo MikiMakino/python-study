@@ -215,20 +215,7 @@ VS Code で実行する場合、JupyterLab 本体は必要ありません。
    display(problem_detail)
 
 
-8. 完全に同じ行を確認する
--------------------------
-
-.. code-block:: python
-
-   duplicate_rows = df[
-       df.duplicated(keep=False)
-   ]
-
-   print(len(duplicate_rows))
-   display(duplicate_rows)
-
-
-9. 要確認データを CSV に出す
+8. 要確認データを CSV に出す
 ----------------------------
 
 .. code-block:: python
@@ -246,8 +233,8 @@ VS Code で実行する場合、JupyterLab 本体は必要ありません。
    )
 
 
-10. 結果
---------
+9. 結果
+-------
 
 - 現行キーで価格が一意でない組：0組
 - 供給ルートを外すと価格が一意でない組：3組

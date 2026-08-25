@@ -1,0 +1,13 @@
+# Normalize line endings for text files; let Git handle conversion on checkout.
+* text=auto eol=lf
+
+# Windows-specific scripts keep CRLF regardless of platform.
+*.bat text eol=crlf
+
+# Binary files: do not touch, do not diff as text.
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
